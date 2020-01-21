@@ -1,5 +1,4 @@
 ﻿using EF.ORM.Application.Model;
-using EF.ORM.Application.UserClass;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
