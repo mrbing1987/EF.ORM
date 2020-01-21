@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EF.ORM
 {
-    public class Class1
+    public class EFHelper
     {
     }
 }
