@@ -84,7 +84,12 @@
     <None Include="packages.config" />
     <None Include="Readme\Readme.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\EF.ORM\EF.ORM.csproj">
+      <Project>{b966ab7f-f940-42e2-931f-ea15f73de1a4}</Project>
+      <Name>EF.ORM</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Model\StudentModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -100,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserClass\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
 ﻿using EF.ORM.Application.Model;
+using EF.ORM.Application.UserClass;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,11 +12,18 @@ namespace EF.ORM.Application
 {
     class Program
     {
+        #region 字段
+        /// <summary>
+        /// 
+        /// </summary>
+        private static EFHelper _client = new EFHelper(new EF_ORM_TestDataBaseEntities());
+        #endregion 字段
+
         static void Main(string[] args)
         {
 			try
 			{
-                EF_ORM_TestDataBaseEntities context = new EF_ORM_TestDataBaseEntities();
+                //EF_ORM_TestDataBaseEntities context = new EF_ORM_TestDataBaseEntities();
 
                 #region EF较为原始的CRUD操作方法举例
                 // 新增
@@ -59,14 +67,80 @@ namespace EF.ORM.Application
                 //context.SaveChanges();
 
                 // 更新
-                Student s1 = new Student() { sID = 0, sName = "1111", sAddress = "22", sSex = "M" };
-                context.Entry<Student>(s1).State = EntityState.Modified;
-                context.SaveChanges();
+                //Student s1 = new Student() { sID = 0, sName = "1111", sAddress = "22", sSex = "M" };
+                //context.Entry<Student>(s1).State = EntityState.Modified;
+                //context.SaveChanges();
 
                 // 查询
                 //var user = context.Students.Select(s => s);
                 //Console.WriteLine(user.Count());
                 #endregion EF标记方式实现CRUD
+
+                #region EFHelper
+                if (_client != null)
+                {
+                    // 插入
+                    //for (int loop = 0; loop < 10; loop++)
+                    //{
+                    //    bool result = _client.InsertData<Student>(new Student()
+                    //    {
+                    //        sID = loop,
+                    //        sName = string.Format("Alex_{0}", loop),
+                    //        sAddress = string.Format("{0}@qq.com", loop),
+                    //        sSex = string.Format("M"),
+                    //    });
+                    //    Console.WriteLine(result);
+                    //}
+
+                    // 查询
+                    //List<Student> queryResult = _client.QueryData<Student>(x=>((x.sID >= 3) && (x.sID <= 6)));
+                    //foreach (var item in queryResult)
+                    //{
+                    //    Console.WriteLine("ID={0},Name={1},Address={2},Sex={3}", item.sID, item.sName, item.sAddress, item.sSex);
+                    //}
+                    //Console.WriteLine("---------------------------------------------------------------");
+                    //// 查询全部
+                    //queryResult = _client.QueryAllData<Student>();
+                    //foreach (var item in queryResult)
+                    //{
+                    //    Console.WriteLine("ID={0},Name={1},Address={2},Sex={3}", item.sID, item.sName, item.sAddress, item.sSex);
+                    //}
+
+                    // 更新
+                    //_client.UpdateData<Student>(new Student() 
+                    //{
+                    //    sID = 0,
+                    //    sName = "Alex",
+                    //    sAddress = "22",
+                    //    sSex = "M"
+                    //});
+
+                    // 删除
+                    //bool deleteResult = _client.DeleteData<Student>(new Student() { sID = 5 });
+                    //if (deleteResult)
+                    //{
+                    //    Console.WriteLine("Delete Finish");
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("Delete Error");
+                    //}
+
+                    // 判断数据是否存在
+                    //bool existedResult = _client.IsDataExisted<Student>(x=>x.sID== 2);
+                    //if (existedResult)
+                    //{
+                    //    Console.WriteLine("Data Existent");
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("Data Non-existent");
+                    //}
+
+                    // 排序
+                    
+                }
+                #endregion EFHelper
 
                 Console.ReadKey();
             }
