@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.ORM", "EF.ORM\EF.ORM.csproj", "{B966AB7F-F940-42E2-931F-EA15F73DE1A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.ORM.Application", "EF.ORM.Application\EF.ORM.Application.csproj", "{C3B71696-273C-452A-B822-8511E5D051CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B966AB7F-F940-42E2-931F-EA15F73DE1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B966AB7F-F940-42E2-931F-EA15F73DE1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B966AB7F-F940-42E2-931F-EA15F73DE1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B71696-273C-452A-B822-8511E5D051CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B71696-273C-452A-B822-8511E5D051CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B71696-273C-452A-B822-8511E5D051CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B71696-273C-452A-B822-8511E5D051CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
