@@ -137,7 +137,18 @@ namespace EF.ORM.Application
                     //}
 
                     // 排序
-                    
+                    //List<Student> queryResult = _client.QueryAllData<Student>();
+                    //queryResult = _client.SortData<Student,int>(queryResult, item => item.sID, SortType.ASC);  // 正序
+                    //foreach (var item in queryResult)
+                    //{
+                    //    Console.WriteLine("ID={0},Name={1},Address={2},Sex={3}", item.sID, item.sName, item.sAddress, item.sSex);
+                    //}
+                    //Console.WriteLine("------------------------------------------------------------");
+                    //queryResult = _client.SortData<Student,int>(queryResult, item => item.sID, SortType.DESC); // 倒序
+                    //foreach (var item in queryResult)
+                    //{
+                    //    Console.WriteLine("ID={0},Name={1},Address={2},Sex={3}", item.sID, item.sName, item.sAddress, item.sSex);
+                    //}
                 }
                 #endregion EFHelper
 

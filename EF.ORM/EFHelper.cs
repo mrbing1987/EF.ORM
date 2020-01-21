@@ -188,21 +188,30 @@ namespace EF.ORM
         /// <summary>
         /// 排序
         /// </summary>
-        /// <typeparam name="T">待排序数据类型</typeparam>
+        /// <typeparam name="T">待排序数据的数据类型</typeparam>
+        /// <typeparam name="S">按照某数据排序的类型</typeparam>
         /// <param name="data">待排序数据集合</param>
-        /// <param name="comparison"></param>
-        /// <returns></returns>
-        public List<T> SortData<T>(T data, IComparer<T> comparison) where T : class
+        /// <param name="keySelector">排序规则</param>
+        /// <param name="sortType">排序类型</param>
+        /// <returns>排序后数据集合</returns>
+        public List<T> SortData<T,S>(List<T> data, Func<T, S> keySelector, SortType sortType) where T : class
         {
             try
             {
                 if ((data != null))
                 {
-                    (data as List<T>).Sort(comparison);
+                    if (sortType == SortType.ASC)
+                    {
+                        return data.OrderBy(keySelector).ToList(); // 正序
+                    }
+                    else if (sortType == SortType.DESC)
+                    {
+                        return data.OrderByDescending(keySelector).ToList(); // 倒序
+                    }
                 }
                 return null;
             }
-            catch(Exception ex)
+            catch
             {
                 return null;
             }
